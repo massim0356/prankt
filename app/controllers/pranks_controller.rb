@@ -19,8 +19,6 @@ class PranksController < ApplicationController
       render :new #show them the create prank view
     end
   end
-  end
-
 
   def prank_params
     params.require(:pranks).permit(:name, :content, :price)
