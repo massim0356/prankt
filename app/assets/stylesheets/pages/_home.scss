@@ -1,1 +1,24 @@
 // Specific CSS for your home-page
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.gradient {
+  linear-gradient(87.27965719087831deg, rgba(219, 217, 219,1) 19.98675199628424%,rgba(219, 217, 219,1) 19.98716144442171%,rgba(254, 254, 254,1) 60.80748803313457%,rgba(255, 255, 255,1) 60.807897481272036%)
+}
+
+.circle1, .circle2 {
+  background: white;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0.3)
+  );
+  height: 20rem;
+  width: 20rem;
+  position: absolute;
+  border-radius: 50%;
+}
+
