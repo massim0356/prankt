@@ -1,8 +1,7 @@
 <%= simple_form_for @booking do |f| %>
-  <%  %>
   <%= f.input :date, :input_html => { :class => 'date_picker' }, inline_label: 'date', label: false %>
   <%= f.input :time, :as => :datetime, inline_label: 'time', label: false %>
-  <%= f.input :description, placeholder: 'special instructions', inline_label: 'description', label: false%>
+  <%= f.input :description, placeholder: 'special instructions', inline_label: 'description', label: false %>
 
   <%= f.submit class: 'btn btn-flat border border-dark mb-3 mt-3' %>
 <% end %>
