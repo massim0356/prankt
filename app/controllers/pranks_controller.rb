@@ -1,20 +1,23 @@
 class PranksController < ApplicationController
   def index
-    @pranks = Prank.all
+    @pranks = policy_scope(Prank)
   end
 
   def show
     @prank = Prank.find(params[:id])
+    authorize @prank 
   end
 
   def new
     @prank = Prank.new
     @prank.user = current_user
+    authorize @prank 
   end
 
   def create
     @prank = Prank.create(prank_params)
     @prank.user = current_user
+    authorize @prank 
     if @prank.save
       redirect_to prank_path(@prank)
     else
