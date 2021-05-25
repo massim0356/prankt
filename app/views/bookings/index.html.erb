@@ -1,12 +1,19 @@
 <div class="container-booking">
   <div class="card-booking">
-  <h1>Your Bookings</h1>
-    <% @bookings.each do |booking| %>
-      <%= booking.prank.name %>
-      <%= booking.date %>
-      <%= booking.time %>
-      <%= booking.description %>
-      <%= booking.status %>
-    <% end %>
+    <h1>Your Bookings</h1>
+    <div class="container">
+      <% @bookings.each do |booking| %>
+        <div class="card-product">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+          <div class="card-product-infos">
+            <h2><%= booking.prank.name %></h2>
+            <%= booking.date %>
+            <%= booking.time %>
+            <p><%= booking.description %></p>
+            <%= booking.status %>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
