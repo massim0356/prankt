@@ -17,7 +17,7 @@ class BookingsController < ApplicationController
     @booking.prank = @prank
     @booking.user = current_user
     if @booking.save
-      redirect_to prank_path(@prank)
+      redirect_to bookings_path
     else
       render :new
     end
@@ -30,6 +30,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    @params.require(:booking).permit(:date, :time, :description, :status, :prank_id)
+    params.require(:booking).permit(:date, :time, :description, :status, :prank_id)
   end
 end

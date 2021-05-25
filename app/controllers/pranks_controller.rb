@@ -5,6 +5,7 @@ class PranksController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
     @prank = Prank.find(params[:id])
     authorize @prank
   end
@@ -27,6 +28,6 @@ class PranksController < ApplicationController
   end
 
   def prank_params
-    params.require(:pranks).permit(:name, :content, :price)
+    params.require(:prank).permit(:name, :content, :price)
   end
 end
