@@ -1,1 +1,9 @@
-
+<div class="container">
+  <h1>Add a prank!</h1>
+    <%= simple_form_for [@prank] do |f| %>
+    <%= f.input :name %>
+    <%= f.input :content %>
+    <%= f.input :price %>
+    <%= f.submit 'Add', class: 'btn btn-success' %>
+  <% end %>
+</div>

@@ -10,11 +10,13 @@ class PranksController < ApplicationController
 
   def new
     @prank = Prank.new
+    @prank.user = current_user
     authorize @prank 
   end
 
   def create
     @prank = Prank.create(prank_params)
+    @prank.user = current_user
     authorize @prank 
     if @prank.save
       redirect_to prank_path(@prank)
