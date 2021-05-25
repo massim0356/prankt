@@ -1,15 +1,9 @@
 <div class="container">
   <h1>All pranks</h1>
-    <ul>
-      <% @pranks.each do |prank| %>
-        <li><%= link_to prank.name, pranks_path(prank) %></li>
-      <% end %>
-    </ul>
-    <%= link_to 'Add a prank', pranks_new_path %>
   <ul>
     <% @pranks.each do |prank| %>
-      <li><%= link_to prank.name, prank_path(prank) %></li>
+      <li><%= link_to prank.name, pranks_path(prank) %></li>
     <% end %>
   </ul>
-  <%= link_to 'Add a prank !', new_prank_path %>
+  <%= link_to 'Add a prank', pranks_new_path %>
 </div>
