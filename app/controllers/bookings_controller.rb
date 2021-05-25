@@ -2,7 +2,6 @@ class BookingsController < ApplicationController
   before_action :set_prank, only: [:new, :create]
   def index
     @bookings = policy_scope(Booking)
-
   end
 
   def new
