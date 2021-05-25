@@ -1,0 +1,12 @@
+<div class="container-booking">
+  <div class="card-booking">
+  <h1>Your Bookings</h1>
+    <% @bookings.each do |booking| %>
+      <%= booking.prank.name %>
+      <%= booking.date %>
+      <%= booking.time %>
+      <%= booking.description %>
+      <%= booking.status %>
+    <% end %>
+  </div>
+</div>
