@@ -1,11 +1,13 @@
 <div class="conteiner">
   <h1>All pranks</h1>
   <div class="cards">
-    <ul>
+    <% @pranks.each do |prank| %>
+    <div class="card-prank">
+
+    </div>
       <% @pranks.each do |prank| %>
-        <li><%= link_to prank.name, pranks_path(prank) %></li>
+        <%= link_to prank.name, pranks_path(prank) %>
       <% end %>
-    </ul>
     <%= link_to 'Add a prank !', pranks_new_path %>
 
   </div>
@@ -13,7 +15,7 @@
 </div>
 
 
-<div class="card-prank">
+
   <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
   <div class="card-prank-info">
     <div>
@@ -22,4 +24,4 @@
     <h2 class="card-trip-pricing">£99.99</h2>
     <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
   </div>
-</div>
+
