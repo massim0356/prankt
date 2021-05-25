@@ -1,17 +1,18 @@
 class BookingsController < ApplicationController
   before_action :set_prank, only: [:new, :create]
   def index
-    @bookings = Booking.all
+    @bookings = policy_scope(Booking)
   end
 
   def new
     set_prank
     @booking = Booking.new
+    authorize @booking
   end
 
   def create
     @booking = Booking.new(booking_params)
-
+    authorize @booking
     set_prank
     @booking.prank = @prank
     @booking.user = current_user
