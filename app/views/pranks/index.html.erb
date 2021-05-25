@@ -1,32 +1,13 @@
-
-  <h1>All pranks</h1>
-  <div class="container-cards">
-    <div class="card-prank">
-      <% @pranks.each do |prank| %>
-        <div class="card-prank-info">
-          <div>
-            <h2><%= link_to prank.name, pranks_path(prank) %></h2>
-          </div>
-        </div>
-      <% end %>
-    </div>
+<div class=“container mt-5”>
+  <div class=“d-flex>
+    <h3>All pranks</h3>
+    <%= link_to ‘add prank’, new_prank_path %>
   </div>
-  <%= link_to 'Add a prank !', new_prank_path %>
-
-
-
-
-
-
-
-
- <!--  <ul>
-    <% @pranks.each do |prank| %>
-      <li><%= link_to prank.name, prank_path(prank) %></li>
+  <div id=list-cards class=“d-flex”>
+      <% @pranks.each do |prank| %>
+       <div id=“image-card” class=“d-flex”>
+          <%= link_to prank.name, prank_path(prank) %>
+       </div>
     <% end %>
-  </ul>
-
- -->
-
-
-
+  </div>
+</div>
