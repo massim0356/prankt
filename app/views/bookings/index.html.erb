@@ -6,14 +6,10 @@
         <div class="card-product">
           <%= image_tag "https://res.cloudinary.com/dzwpbkn3u/image/upload/v1621747327/homeless-chic_n3ntvs.png" %>
           <div class="card-product-infos">
-            <div class="card-product-info">
-              <h2><%= booking.prank.name %></h2>
-              <h2><%= booking.date.strftime('%A, %b %d') %></h2>
+            <div>
+              <p><b><%= booking.prank.name %></b></p>
+              <p><%= booking.date.strftime('%A, %b %d') %></p>
               <p><%= booking.description %></p>
-            </div>
-            <div class="card-product-status">
-              <h6>Status</h6>
-              <p><%= booking.status %></p>
             </div>
           </div>
         </div>
