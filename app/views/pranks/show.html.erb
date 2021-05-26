@@ -1,16 +1,16 @@
 <body>
-<div class="container-prank">
+<div class="container-prank bg-white">
   <div class="top d-flex flex-column justify-content-center mb-5">
       <h2><%= @prank.name %></h2>
       <img src="https://res.cloudinary.com/dzwpbkn3u/image/upload/v1621747327/homeless-chic_n3ntvs.png">
 
     </div>
-    <div class="bottom d-flex justify-content-around mt-3 flex-wrap">
-      <div class="info text-right" style="width: 500px">
+    <div class="bottom d-flex justify-content-center mt-3 flex-wrap">
+      <div class="info text-right" style="width: 700px">
       <p><%= @prank.price %> yen</p>
       <p><%= @prank.content %></p>
     </div>
-      <div class="form bg-white border border-dark d-flex justify-content-center align-items-center p-3">
+      <div class="form bg-gray border border-dark d-flex justify-content-center align-items-center p-3">
     <%= simple_form_for [@prank, @booking] do |f| %>
       <%= f.input :date, html5: true, :input_html => { :value => Date.today} %>
       <%= f.input :description, placeholder: 'special instructions', inline_label: 'description' %>
