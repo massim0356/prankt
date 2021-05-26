@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-puts "destroying all database..."
+puts "destroying entire database..."
 User.destroy_all
 Prank.destroy_all
 Booking.destroy_all
@@ -22,6 +22,4 @@ Prank.create!([name: "Laugh for five minutes", content: "I will laugh for five m
 Prank.create!([name: "Scare someone", content: "I will scare the target by jumping at them while I'm hiding somewhere", price: 2000, user: User.all.sample])
 Prank.create!([name: "Throw water balloons", content: "I will throw water balloons at the requested target", price: 1500, user: User.all.sample])
 Prank.create!([name: "Send a glitter bomb", content: "I will send a glitter bomb to the requested address", price: 500, user: User.all.sample])
-puts "Created #{User.count} users, #{Prank.count} pranks..."
-
-
+puts "Created #{User.count} users and #{Prank.count} pranks..."
