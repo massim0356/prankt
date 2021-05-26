@@ -1,3 +1,46 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<%= link_to 'pranks', pranks_path  %>
+<main>
+  <div class="circle1"></div>
+  <div class="circle2"></div>
+  <div class="flexbox-container">
+    <div class="glass">
+      <div class="intro-para">
+        <p><b>Yes, you read it right.</b>
+          We do pranks, professionally.</br>
+        Surprise your friends, family member, anyone with a good sense of humour.</br>
+      <%= link_to 'See our pranks', pranks_path, class: "btn btn-warning btn-block" %>
+    </p>
+  </div>
+</div>
+</div>
+</div>
+</main>
+<footer>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <h6>About</h6>
+          <p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum blablabla...</p>
+        </div>
+        <div class="col-xs-6 col-md-3">
+          <h6>Quick Links</h6>
+          <ul class="footer-links">
+            <li><%= link_to 'See our pranks', pranks_path %></li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <ul class="social-icons">
+            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+            <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
