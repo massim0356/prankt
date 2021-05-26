@@ -1,13 +1,15 @@
-<div class=“container mt-5”>
-  <div class=“d-flex>
-    <h3>All pranks</h3>
-    <%= link_to ‘add prank’, new_prank_path %>
-  </div>
-  <div id=list-cards class=“d-flex”>
+<div class="container-cards mt-5">
+   <h1>All pranks</h1>
+   <div class="top d-grid gap-2 col-12 d-flex justify-content-end">
+    <button class="btn btn-flat" type="button"><%= link_to 'List a prank!', new_prank_path %></button>
+      <!-- <h3><%= link_to 'Add a new prank', new_prank_path %></h3> -->
+   </div>
+   <div class="card-prank">
       <% @pranks.each do |prank| %>
-       <div id=“image-card” class=“d-flex”>
-          <%= link_to prank.name, prank_path(prank) %>
+       <div class="card-test border border-dark">
+          <img src="https://res.cloudinary.com/dzwpbkn3u/image/upload/v1621747327/homeless-chic_n3ntvs.png" alt="pic">
+          <div class="prank-name"><%= link_to prank.name, prank_path(prank) %></div>
        </div>
-    <% end %>
-  </div>
+      <% end %>
+   </div>
 </div>
