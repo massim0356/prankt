@@ -1,12 +1,19 @@
 <div class="container-booking">
   <div class="card-booking">
-  <h1>Your Bookings</h1>
-    <% @bookings.each do |booking| %>
-      <%= booking.prank.name %>
-      <%= booking.date %>
-      <%= booking.time %>
-      <%= booking.description %>
-      <%= booking.status %>
-    <% end %>
+    <h1>Your Bookings</h1>
+    <div class="container">
+      <% @bookings.each do |booking| %>
+        <div class="card-product">
+          <%= image_tag "https://res.cloudinary.com/dzwpbkn3u/image/upload/v1621747327/homeless-chic_n3ntvs.png" %>
+          <div class="card-product-infos">
+            <div>
+              <p><b><%= booking.prank.name %></b></p>
+              <p><%= booking.date.strftime('%A, %b %d') %></p>
+              <p><%= booking.description %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
