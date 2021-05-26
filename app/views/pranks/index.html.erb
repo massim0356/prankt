@@ -1,9 +1,14 @@
-<div class="container">
-  <h1>All pranks</h1>
-  <ul>
-    <% @pranks.each do |prank| %>
-      <li><%= link_to prank.name, prank_path(prank) %></li>
-    <% end %>
-  </ul>
-  <%= link_to 'Add a prank', new_prank_path %>
+<div class="container-cards mt-5">
+   <h1>All pranks</h1>
+   <div class="top d-grid gap-2 col-12 d-flex justify-content-end">
+    <button class="btn btn-flat" type="button"><%= link_to 'List a prank!', new_prank_path %></button>
+   </div>
+   <div class="card-prank">
+      <% @pranks.each do |prank| %>
+       <div class="card-test border border-dark">
+          <img src="https://res.cloudinary.com/dzwpbkn3u/image/upload/v1621747327/homeless-chic_n3ntvs.png" alt="pic">
+          <div class="prank-name"><%= link_to prank.name, prank_path(prank) %></div>
+       </div>
+      <% end %>
+   </div>
 </div>
