@@ -1,0 +1,143 @@
+.container-cards {
+  width: 1068px;
+  margin: 0 auto;
+}
+
+.btn {
+  background-color: #FB9723;
+  border-radius: 15px;
+}
+
+.top {
+  padding: 5px;
+}
+
+.top a {
+  text-align: right;
+  color: white;
+  font-weight: bold;
+}
+
+.card-prank {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  flex-grow: 1;
+  justify-content: space-around;
+}
+
+.prank-name {
+  font-size: 18px;
+  width: 182px;
+  font-weight: bold;
+  text-align: center;
+  margin: auto;
+}
+
+.prank-name a {
+  color: #2c2c2c;
+  font-size: 25px;
+  line-height: 5px;
+}
+
+h1 {
+  font-size: 60px;
+  font-weight: bold;
+  text-align: center;
+}
+
+h3 {
+  text-align: right;
+  font-weight: bold;
+  padding: 5px;
+}
+
+.card-test {
+  border-radius: 15px;
+  height: 208px;
+  display: flex;
+  overflow: hidden;
+  background-color: white;
+  width: 340px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  flex-grow: 1;
+  justify-content: space-around;
+  padding: 16px;
+
+  background-size: cover;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.card-test img {
+  padding-left: 2px;
+  width: 85px;
+  padding-bottom: 73px;
+  margin-top: 26px;
+}
+
+.card-product {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.card-product img {
+  height: 100%;
+  width: 120px;
+  object-fit: contain;
+  margin: 10px 20px;
+  padding: 10px
+}
+
+.card-product h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
+}
+
+.card-booking h1 {
+  text-align: center;
+  padding-top: 10px;
+}
+
+.card-booking h6 {
+  margin-top: 10px;
+}
+
+.card-product-infos {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.card-product-status {
+  background-color: rgb(209, 63, 63);
+  border: none;
+  color: black;
+  padding: 20px 10px;
+  display: inline-block;
+  margin: 4px 2px;
+  border-radius: 16px;
+}
