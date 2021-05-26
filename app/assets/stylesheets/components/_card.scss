@@ -1,0 +1,39 @@
+p {
+  font-family: $body-font;
+}
+
+#name {
+  font-family: $headers-font;
+}
+
+
+.container-prank {
+  padding-top: 30px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.top {
+  align-items: center;
+  gap: 20px;
+
+  img {
+    height: 150px;
+  }
+}
+
+#new_booking {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  width: 500px;
+}
+
+.btn {
+  background-color: #FB9723;
+  color: white;
+}
