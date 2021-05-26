@@ -4,13 +4,17 @@
     <div class="container">
       <% @bookings.each do |booking| %>
         <div class="card-product">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+          <%= image_tag "https://res.cloudinary.com/dzwpbkn3u/image/upload/v1621747327/homeless-chic_n3ntvs.png" %>
           <div class="card-product-infos">
-            <h2><%= booking.prank.name %></h2>
-            <%= booking.date %>
-            <%= booking.date.strftime('%A, %b %d') %>
-            <p><%= booking.description %></p>
-            <p><%= booking.status %></p>
+            <div class="card-product-info">
+              <h2><%= booking.prank.name %></h2>
+              <h2><%= booking.date.strftime('%A, %b %d') %></h2>
+              <p><%= booking.description %></p>
+            </div>
+            <div class="card-product-status">
+              <h6>Status</h6>
+              <p><%= booking.status %></p>
+            </div>
           </div>
         </div>
       <% end %>
