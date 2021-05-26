@@ -8,7 +8,7 @@
           <div class="card-product-infos">
             <h2><%= booking.prank.name %></h2>
             <%= booking.date %>
-            <%= booking.time %>
+            <%= booking.date.strftime('%A, %b %d') %>
             <p><%= booking.description %></p>
             <p><%= booking.status %></p>
           </div>
