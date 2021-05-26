@@ -1,8 +1,7 @@
 <div class="container-cards mt-5">
+  <div class="mt-5 mb-5">
    <h1>All pranks</h1>
-   <div class="top d-grid gap-2 col-12 d-flex justify-content-end">
-    <button class="btn btn-flat" type="button"><%= link_to 'List a prank!', new_prank_path %></button>
-   </div>
+  </div>
    <div class="card-prank">
       <% @pranks.each do |prank| %>
        <div class="card-test border border-dark">
