@@ -14,7 +14,7 @@
     <%= simple_form_for [@prank, @booking] do |f| %>
       <%= f.input :date, html5: true, :input_html => { :value => Date.today} %>
       <%= f.input :description, placeholder: 'special instructions', inline_label: 'description' %>
-      <%= f.submit class: 'btn btn-flat border border-dark mb-3 mt-3' %>
+      <%= f.submit class: 'btn btn-flat mb-3 mt-3' %>
     <% end %>
 </div>
 
