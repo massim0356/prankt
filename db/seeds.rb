@@ -6,13 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 puts "destroying all database..."
-User.destroy_all
-Prank.destroy_all
-Booking.destroy_all
-
 puts "Creating Users, Pranks and Bookings..."
 
-10.times { User.create!([email: Faker::Internet.email, password: "te23th", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name]) }
 Prank.create!([name: "Cover something in sticky notes", content: "I will cover the requested item in sticky notes. Disclaimer: I won't do anything illegal (break into someones house etc.)", price: 5000, user: User.all.sample])
 Prank.create!([name: "Install water bucket prank", content: "I will professionally install a waterbucket in the place of your choosing. Most common places include: Bedroom door and Bathroom door.", price: 2000, user: User.all.sample])
 Prank.create!([name: "Turn backyard into petting zoo", content: "I will turn the targets backyard into a petting zoo. Note: Someone should distract them while I setup Cthe petting zoo.", price: 20000, user: User.all.sample])
