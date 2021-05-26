@@ -1,0 +1,33 @@
+.circle1, .circle2 {
+  height: 10rem;
+  width: 10rem;
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.circle1 {
+  background-color: #4B53E4;
+  top: 5%;
+  right: 15%;
+  width: 20rem;
+  height: 20rem;
+}
+
+.circle2 {
+  background-color: #FB9723;
+  top: 15%;
+  right: 6%;
+}
+
+.circle3 {
+  background-color: #4B53E4;
+  width: 50%;
+  height: 50%;
+}
+
+.circle4 {
+  background-color: #FB9723;
+  bottom: 10%;
+  left: 8%;
+}

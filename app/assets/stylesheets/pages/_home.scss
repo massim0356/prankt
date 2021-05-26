@@ -5,20 +5,80 @@
   box-sizing: border-box;
 }
 
-.gradient {
-  linear-gradient(87.27965719087831deg, rgba(219, 217, 219,1) 19.98675199628424%,rgba(219, 217, 219,1) 19.98716144442171%,rgba(254, 254, 254,1) 60.80748803313457%,rgba(255, 255, 255,1) 60.807897481272036%)
+// .gradient {
+//   linear-gradient: (87.27965719087831deg, rgba(219, 217, 219,1) 19.98675199628424%,rgba(219, 217, 219,1) 19.98716144442171%,rgba(254, 254, 254,1) 60.80748803313457%,rgba(255, 255, 255,1) 60.807897481272036%);
+// }
+
+main {
+  background-image: url("https://res.cloudinary.com/bdmaecloud/image/upload/v1622014465/Prank_t_Landing_Page_definitely_the_last_time_fbypgq.png");
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 10px;
+  z-index: -1;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 20% 55%;
 }
 
-.circle1, .circle2 {
+p {
+  font-family: "Arvo", serif;
+}
+
+.glass {
+  padding-top: 48px;
+  padding-left: 16px;
+  padding-right: 16px;
   background: white;
+  min-height: 40vh;
+  width: 40%;
   background: linear-gradient(
     to right bottom,
-    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0.7),
     rgba(255, 255, 255, 0.3)
   );
-  height: 20rem;
-  width: 20rem;
-  position: absolute;
-  border-radius: 50%;
+  border-radius: 2rem;
+  z-index: 2;
+  backdrop-filter: blur(1rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flexbox-container {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 20px;
+}
+
+// .left-div {
+//   flex: 1;
+//   height: 100vh;
+//   text-align: center;
+// }
+
+// .right-div {
+//   flex: 1;
+//   height: 100vh;
+//   text-align: center;
+//   margin: 0;
+//   padding: 0;
+//   position: relative;
+// }
+
+
+.intro-para {
+  width: 100%;
+  display: flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn {
+  border-radius: 6px;
 }
 
