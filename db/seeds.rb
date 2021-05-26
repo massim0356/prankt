@@ -13,9 +13,16 @@ Booking.destroy_all
 puts "Creating Users, Pranks and Bookings..."
 
 10.times { User.create!([email: Faker::Internet.email, password: "te23th", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name]) }
-20.times { Prank.create!([name: Faker::JapaneseMedia::Doraemon.gadget, content: Faker::TvShows::FamilyGuy.quote, price: 2000, user: User.all.sample]) }
-10.times { Booking.create!([date: Date.today, status: "incomplete", description: Faker::TvShows::FamilyGuy.quote, user: User.all.sample, prank_id: rand(1..20)])}
-
-puts "Created #{User.count} users, #{Prank.count} pranks, #{Booking.count} bookings..."
+Prank.create!([name: "Cover something in sticky notes", content: "I will cover the requested item in sticky notes. Disclaimer: I won't do anything illegal(break into someones house etc." price: 5000, user: User.all.sample])
+Prank.create!([name: "Install water bucket prank", content: "I will professionally install a waterbucket in the place of your choosing. Most common places include: Bedroom door and Bathroom door." price: 2000, user: User.all.sample])
+Prank.create!([name: "Turn backyard into petting zoo", content: "I will turn the targets backyard into a petting zoo. Note: Someone should distract them while I setup Cthe petting zoo." price: 20000, user: User.all.sample])
+Prank.create!([name: "Act like Jose in front of other people", content: "I will eat a ton of dust" price: 500, user: User.all.sample])
+Prank.create!([name: "TP something", content: "I will cover the requested object with toilet paper" price: 5000, user: User.all.sample])
+Prank.create!([name: "Throw away cheesebread", content: "I will steal the target's cheese bread and throw it in the trash" price: 100, user: User.all.sample])
+Prank.create!([name: "Laugh for five minutes", content: "I will laugh for five minutes in front of an audience" price: 500, user: User.all.sample])
+Prank.create!([name: "Scare some", content: "I will scare the target by jumping at them while I'm hiding somewhere" price: 2000, user: User.all.sample])
+Prank.create!([name: "Throw water balloons", content: "I will throw water balloons at the requested target" price: 1500, user: User.all.sample])
+Prank.create!([name: "Send glitter bomb", content: "I will send a glitter bomb to the requested address" price: 500, user: User.all.sample])
+puts "Created #{User.count} users, #{Prank.count} pranks..."
 
 
