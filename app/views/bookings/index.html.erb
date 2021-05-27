@@ -7,11 +7,11 @@
         <div class="card-product border border-dark" style="width: 600px">
           <%= image_tag "https://res.cloudinary.com/dzwpbkn3u/image/upload/v1621747327/homeless-chic_n3ntvs.png" %>
           <div class="card-product-infos">
-            <div>
+            <div class="w-100">
               <p><b><%= booking.prank.name %></b></p>
               <p><%= booking.date.strftime('%A, %b %d') %></p>
               <p><%= booking.description %></p>
-              <p><%= booking.status %></p>
+              <p><%= booking.status.capitalize %></p>
               <% if booking.completed? %>
                 <div id="accordion">
                   <div class="card border-0">
@@ -24,7 +24,7 @@
                     </div>
                     <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                       <div class="card-body">
-                        <%= image_tag "https://ggsc.s3.amazonaws.com/images/made/images/uploads/The_Science-Backed_Benefits_of_Being_a_Dog_Owner_300_200_int_c1-1x.jpg"%>
+                        <%= image_tag "https://ggsc.s3.amazonaws.com/images/made/images/uploads/The_Science-Backed_Benefits_of_Being_a_Dog_Owner_300_200_int_c1-1x.jpg", class: "w-100" %>
                       </div>
                     </div>
                   </div>
