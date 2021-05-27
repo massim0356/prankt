@@ -14,7 +14,7 @@
     <div class="card-prank">
       <% @pranks.each do |prank| %>
         <div class="card-test border border-dark">
-          <img src="https://res.cloudinary.com/dzwpbkn3u/image/upload/v1621747327/homeless-chic_n3ntvs.png" alt="pic">
+          <%= image_tag prank.img_url, alt: "prank" %>
           <div class="prank-name"><%= link_to prank.name, prank_path(prank) %></div>
         </div>
       <% end %>

@@ -67,18 +67,14 @@ h3 {
   grid-template-columns: 1fr 1fr 1fr;
   flex-grow: 1;
   justify-content: space-around;
-  padding: 16px;
-
-  background-size: cover;
   align-items: center;
+  padding: 16px;
   justify-content: space-around;
 }
 
 .card-test img {
   padding-left: 2px;
   width: 85px;
-  padding-bottom: 73px;
-  margin-top: 26px;
 }
 
 .card-product {
