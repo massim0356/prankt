@@ -97,7 +97,8 @@ h3 {
   background: white;
   border-radius: 15px;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
   margin-top: 20px;
 }
 
@@ -125,6 +126,7 @@ h3 {
 
 .card-product .card-product-infos {
   padding: 16px;
+  width: 200px;
 }
 
 .card-booking h1 {
