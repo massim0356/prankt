@@ -10,6 +10,9 @@ $gray: #0E0000;
 $light-gray: #F4F4F4;
 
 body {
-  background-color: white;
+  background-image: url("https://res.cloudinary.com/dzwpbkn3u/image/upload/v1622013619/background_fwygbj.png");
+  background-position: cover;
+  background-attachment: fixed;
+  background-color: white !important;
   color: #2C2C2C;
 }
