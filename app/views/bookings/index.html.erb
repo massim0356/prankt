@@ -24,7 +24,7 @@
                     </div>
                     <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                       <div class="card-body">
-                        <%= image_tag "https://ggsc.s3.amazonaws.com/images/made/images/uploads/The_Science-Backed_Benefits_of_Being_a_Dog_Owner_300_200_int_c1-1x.jpg", class: "w-100" %>
+                        <%= booking.photo.attached? ? cl_image_tag(booking.photo.key, class: "w-100"): "No photo :(" %>
                       </div>
                     </div>
                   </div>
@@ -59,6 +59,11 @@
                   <%= simple_form_for booking do |f| %>
                     <%= f.input :status, as: :hidden, input_html: { value: 'completed'} %>
                     <%= f.submit 'Complete', class: 'btn btn-info' %>
+                  <% end %>
+                <% elsif booking.completed? %>
+                  <%= simple_form_for(booking) do |f| %>
+                    <%= f.input :photo, as: :file %>
+                    <%= f.submit 'Accept', class: 'btn btn-info' %>
                   <% end %>
                 <% else %>
                   <p class="booking-status"><%= booking.status %></p>
