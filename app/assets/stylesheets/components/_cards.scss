@@ -83,11 +83,11 @@ h3 {
 
 .card-product {
   overflow: hidden;
-  height: 120px;
+  min-height: 120px;
   background: white;
   border-radius: 15px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   margin-top: 20px;
 }
 

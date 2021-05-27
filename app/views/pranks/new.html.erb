@@ -1,9 +1,10 @@
 <div class="container">
   <h1>Add a prank!</h1>
-    <%= simple_form_for [@prank] do |f| %>
+  <%= simple_form_for [@prank] do |f| %>
     <%= f.input :name %>
     <%= f.input :content %>
     <%= f.input :price %>
+    <%= f.input :city %>
     <%= f.submit 'Add', class: 'btn btn-success' %>
   <% end %>
 </div>
