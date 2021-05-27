@@ -1,9 +1,9 @@
 <div class="container-prank">
   <div class="top d-flex flex-column justify-content-center mb-5">
       <h2><%= @prank.name %></h2>
-      <img src="https://res.cloudinary.com/dzwpbkn3u/image/upload/v1621747327/homeless-chic_n3ntvs.png">
-
+    <%= @prank.photo.attached? ? cl_image_tag(@prank.photo.key) : "no photo" %>
     </div>
+  </div>
     <div class="bottom d-flex justify-content-center mt-3 flex-wrap">
       <div class="info text-center border border-dark p-3" style="width: 500px">
       <p><%= @prank.price %> yen</p>
