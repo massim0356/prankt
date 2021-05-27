@@ -1,7 +1,12 @@
 class PranksController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
-    @pranks = policy_scope(Prank)
+    @pranks =
+    if params[:query]
+      policy_scope(Prank).search_by_name_content_city(params[:query])
+    else
+      policy_scope(Prank)
+    end
   end
 
   def show
