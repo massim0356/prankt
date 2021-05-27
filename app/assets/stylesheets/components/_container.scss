@@ -1,5 +1,10 @@
 .container-booking {
-  background-color: white;
-  background-image: url("https://res.cloudinary.com/dzwpbkn3u/image/upload/v1622013619/background_fwygbj.png");
   min-height: 100vh;
+}
+
+.container-prank {
+  padding-top: 30px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
