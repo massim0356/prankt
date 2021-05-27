@@ -30,6 +30,7 @@
   width: 50%;
   display: flex;
   flex-wrap: wrap;
+  padding: 5px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
@@ -101,11 +102,11 @@ h3 {
 
 .card-product {
   overflow: hidden;
-  height: 120px;
+  min-height: 120px;
   background: white;
   border-radius: 15px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   margin-top: 20px;
 }
 
