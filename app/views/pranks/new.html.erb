@@ -5,6 +5,7 @@
     <%= f.input :content %>
     <%= f.input :price %>
     <%= f.input :city %>
-    <%= f.submit 'Add', class: 'btn btn-success' %>
+    <%= f.input :photo, as: :file, inline_label: 'photo', label: false %>
+    <%= f.submit 'Add', class: 'btn btn-flat' %>
   <% end %>
 </div>
