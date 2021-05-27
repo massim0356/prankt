@@ -1,9 +1,9 @@
-<div class="container-booking">
+<div class="container-booking d-flex flex-column align-items-center pt-5">
   <div class="card-booking">
     <h1>Your Bookings</h1>
     <div class="container">
       <% @bookings.each do |booking| %>
-        <div class="card-product border border-dark">
+        <div class="card-product border border-dark" style="width: 600px">
           <%= image_tag "https://res.cloudinary.com/dzwpbkn3u/image/upload/v1621747327/homeless-chic_n3ntvs.png" %>
           <div class="card-product-infos">
             <div>
@@ -16,4 +16,5 @@
       <% end %>
     </div>
   </div>
+  <%= link_to 'All pranks', pranks_path, class: 'btn btn-flat mb-3 mt-3 w-10' %>
 </div>
