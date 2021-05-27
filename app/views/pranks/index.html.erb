@@ -1,15 +1,28 @@
 <div class="bg-white">
-  <div class="container-cards pt-5">
-    <div class="mt-5 mb-5">
-     <h1>All pranks</h1>
-    </div>
-     <div class="card-prank">
-        <% @pranks.each do |prank| %>
-         <div class="card-test border border-dark">
-            <img src="https://res.cloudinary.com/dzwpbkn3u/image/upload/v1621747327/homeless-chic_n3ntvs.png" alt="pic">
-            <div class="prank-name"><%= link_to prank.name, prank_path(prank) %></div>
-         </div>
-        <% end %>
-     </div>
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(https://cdn.dribbble.com/users/3347395/screenshots/8929289/media/6018c0ee5221aaac40add5132baf70ea.png?compress=1&resize=1600x1200);">
+    <div class="container">
+      <h1>Prankt brings <strong>creative pranks</strong> to <strong>creative people</strong>!</h1>
+    </br>
+    <div class="tinted-paragraph">
+      <p>Choose from our available prank services</p>
+    </br>
+    <p>Pranks created by us, pranks created by you.</p>
   </div>
+</div>
+</div>
+<div class="mt-5 mb-5">
+  <h1>All pranks</h1>
+</div>
+<div class="background-container" style="background-image: url(https://res.cloudinary.com/dzwpbkn3u/image/upload/v1622013619/background_fwygbj.png);">
+  <div class="container-cards pt-5">
+    <div class="card-prank">
+      <% @pranks.each do |prank| %>
+        <div class="card-test border border-dark">
+          <img src="https://res.cloudinary.com/dzwpbkn3u/image/upload/v1621747327/homeless-chic_n3ntvs.png" alt="pic">
+          <div class="prank-name"><%= link_to prank.name, prank_path(prank) %></div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
 </div>
