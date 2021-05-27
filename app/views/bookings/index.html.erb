@@ -12,6 +12,7 @@
               <p><%= booking.date.strftime('%A, %b %d') %></p>
               <p><%= booking.description %></p>
               <p><%= booking.status.capitalize %></p>
+            </div>
               <% if booking.completed? %>
                 <div id="accordion">
                   <div class="card border-0">
