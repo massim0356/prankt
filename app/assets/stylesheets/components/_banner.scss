@@ -4,7 +4,6 @@
   padding: 150px 0;
   height: 24%;
   background-position: 20% 50%;
-  background-attachment: fixed;
 }
 
 .banner h1 {
@@ -21,9 +20,6 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
-.title {
-  height: 40px;
-}
 
 @media (max-width: 992px) {
   .content-container {
