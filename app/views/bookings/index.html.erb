@@ -5,12 +5,13 @@
       <h3>Bookings by you</h3>
       <% @bookings.each do |booking| %>
         <div class="card-product border border-dark" style="width: 600px">
-          <%= image_tag "https://res.cloudinary.com/dzwpbkn3u/image/upload/v1621747327/homeless-chic_n3ntvs.png" %>
+          <%= image_tag booking.prank.img_url, alt: "prank_img" %>
           <div class="card-product-infos">
             <div>
               <p><b><%= booking.prank.name %></b></p>
-              <p><%= booking.date.strftime('%A, %b %d') %></p>
-              <p><%= booking.description %></p>
+              <p>when: <%= booking.date.strftime('%A, %b %d') %></p>
+              <p><%= booking.prank.price %> yen / <%= booking.prank.city %> </p>
+              <p>description: <%= booking.description %></p>
               <p><%= booking.status %></p>
             </div>
           </div>
@@ -21,12 +22,13 @@
       <h3>Your pranks to pull</h3>
       <% @bookings_as_owner.each do |booking| %>
         <div class="card-product border border-dark" style="width: 600px">
-          <%= image_tag "https://res.cloudinary.com/dzwpbkn3u/image/upload/v1621747327/homeless-chic_n3ntvs.png" %>
+          <%= image_tag booking.prank.img_url, alt: "prank_img" %>
           <div class="card-product-infos">
             <div>
               <p><b><%= booking.prank.name %></b></p>
-              <p><%= booking.date.strftime('%A, %b %d') %></p>
-              <p><%= booking.description %></p>
+              <p>when: <%= booking.date.strftime('%A, %b %d') %></p>
+              <p><%= booking.prank.price %> yen / <%= booking.prank.city %> </p>
+              <p>description: <%= booking.description %></p>
               <p><%= booking.status %></p>
             </div>
           </div>
