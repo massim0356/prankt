@@ -1,15 +1,23 @@
 <div class="bg-white">
   <div class="container-cards pt-5">
     <div class="mt-5 mb-5">
-     <h1>All pranks</h1>
+      <h1>All pranks</h1>
+      <%= form_tag pranks_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a prank"
+        %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
     </div>
-     <div class="card-prank">
-        <% @pranks.each do |prank| %>
-         <div class="card-test border border-dark">
-            <img src="https://res.cloudinary.com/dzwpbkn3u/image/upload/v1621747327/homeless-chic_n3ntvs.png" alt="pic">
-            <div class="prank-name"><%= link_to prank.name, prank_path(prank) %></div>
-         </div>
-        <% end %>
-     </div>
+    <div class="card-prank">
+      <% @pranks.each do |prank| %>
+        <div class="card-test border border-dark">
+          <img src="https://res.cloudinary.com/dzwpbkn3u/image/upload/v1621747327/homeless-chic_n3ntvs.png" alt="pic">
+          <div class="prank-name"><%= link_to prank.name, prank_path(prank) %></div>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
