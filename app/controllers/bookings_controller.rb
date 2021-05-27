@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_prank, only: [:new, :create, :update]
+  before_action :set_prank, only: [:new, :create]
   def index
     @bookings = policy_scope(Booking).where(user: current_user)
     @bookings_as_owner = policy_scope(Booking).where(prank: current_user.pranks)
@@ -25,7 +25,13 @@ class BookingsController < ApplicationController
   end
 
   def update
-    @booking.update_attributes(booking_params)
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    if @booking.update(booking_params)
+      redirect_to bookings_path
+    else
+      render :bookings_path
+    end
   end
 
   private
@@ -35,6 +41,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:date, :time, :description, :status, :prank_id)
+    params.require(:booking).permit(:date, :description, :status, :prank_id)
   end
 end
