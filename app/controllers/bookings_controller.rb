@@ -1,7 +1,8 @@
 class BookingsController < ApplicationController
-  before_action :set_prank, only: [:new, :create]
+  before_action :set_prank, only: [:new, :create, :update]
   def index
-    @bookings = policy_scope(Booking)
+    @bookings = policy_scope(Booking).where(user: current_user)
+    @bookings_as_owner = policy_scope(Booking).where(prank: current_user.pranks)
   end
 
   def new
@@ -21,6 +22,10 @@ class BookingsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def update
+    @booking.update_attributes(booking_params)
   end
 
   private
