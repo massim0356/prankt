@@ -1,7 +1,9 @@
 <div class="container-prank">
   <div class="top d-flex flex-column justify-content-center mb-5">
       <h2><%= @prank.name %></h2>
+      <div class="floating" style="height: 150px; width: 150px">
     <%= @prank.photo.attached? ? cl_image_tag(@prank.photo.key) : "no photo" %>
+  </div>
     </div>
   </div>
     <div class="bottom d-flex justify-content-center mt-3 flex-wrap">
