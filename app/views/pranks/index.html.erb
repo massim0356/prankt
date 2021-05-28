@@ -12,25 +12,24 @@
           id: "search-form",
           placeholder: "What prank do you want to pull?"
         %>
-        <%= submit_tag "Search", class: "btn btn-primary btn-lg" %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
       <% end %>
     </div>
   </div>
-</div>
-<div class="background-container" style="background-image: url(https://res.cloudinary.com/dzwpbkn3u/image/upload/v1622013619/background_fwygbj.png);">
-  <div class="title">
+  <div class="mt-5 mb-5">
     <h1>All pranks</h1>
   </div>
-  <div class="container-pranks">
-    <div class="container-cards pt-5">
-      <div class="card-prank">
-        <% @pranks.each do |prank| %>
-          <div class="card-test">
-            <img src="https://res.cloudinary.com/dzwpbkn3u/image/upload/v1621747327/homeless-chic_n3ntvs.png" alt="pic">
-            <div class="prank-name"><%= link_to prank.name, prank_path(prank) %></div>
-          </div>
-        <% end %>
+  <div class="background-container" style="background-image: url(https://res.cloudinary.com/dzwpbkn3u/image/upload/v1622013619/background_fwygbj.png);">
+    <div class="container-pranks">
+      <div class="container-cards pt-5">
+        <div class="card-prank">
+          <% @pranks.each do |prank| %>
+            <div class="card-test">
+              <%= prank.photo.attached? ? cl_image_tag(prank.photo.key) : cl_image_tag("https://res.cloudinary.com/dzwpbkn3u/image/upload/v1621747327/homeless-chic_n3ntvs.png") %>
+              <div class="prank-name"><%= link_to prank.name, prank_path(prank) %></div>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
-</div>

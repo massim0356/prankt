@@ -1,9 +1,11 @@
 <div class="container">
   <h1>Add a prank!</h1>
-    <%= simple_form_for [@prank] do |f| %>
+  <%= simple_form_for [@prank] do |f| %>
     <%= f.input :name %>
     <%= f.input :content %>
     <%= f.input :price %>
-    <%= f.submit 'Add', class: 'btn btn-success' %>
+    <%= f.input :city %>
+    <%= f.input :photo, as: :file, inline_label: 'photo', label: false %>
+    <%= f.submit 'List your prank!', class: 'btn btn-flat' %>
   <% end %>
 </div>

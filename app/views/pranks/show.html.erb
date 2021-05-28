@@ -1,19 +1,21 @@
 <div class="container-prank">
-  <div class="top d-flex flex-column justify-content-center mb-5">
+  <div class="top d-flex flex-column justify-content-center align-items-center mb-5">
       <h2><%= @prank.name %></h2>
-      <img src="https://res.cloudinary.com/dzwpbkn3u/image/upload/v1621747327/homeless-chic_n3ntvs.png">
-
+    <div class="floating ml-0" style="height: 150px; width: 150px;">
+    <%= @prank.photo.attached? ? cl_image_tag(@prank.photo.key) : "no photo" %>
     </div>
+  </div>
     <div class="bottom d-flex justify-content-center mt-3 flex-wrap">
-      <div class="info text-center border border-dark p-3" style="width: 500px">
-      <p><%= @prank.price %> yen</p>
-      <p><%= @prank.content %></p>
+      <div class="info text-center border border-dark p-3" style="width: 400px">
+      <p><strong>Price:</strong></br><%= @prank.price %> yen</p>
+      <p><strong>Location: </strong></br><%= @prank.city %></p>
+      <p><strong>Description:</strong></br><%= @prank.content %></p>
     </div>
       <div class="form d-flex justify-content-center align-items-center p-3 border border-dark">
     <%= simple_form_for [@prank, @booking] do |f| %>
       <%= f.input :date, html5: true, :input_html => { :value => Date.today} %>
       <%= f.input :description, placeholder: 'special instructions', inline_label: 'description' %>
-      <%= f.submit class: 'btn btn-flat mb-3 mt-3' %>
+      <%= f.submit class: 'btn btn-flat mb-3 mt-3', value: "Book" %>
     <% end %>
 </div>
 
