@@ -1,5 +1,5 @@
 <div class="container-prank">
-  <div class="top d-flex flex-column justify-content-center align-items-center mb-5">
+  <div class="top d-flex flex-column justify-content-center align-items-center ml-0 mb-5">
       <h2 class="text-center"><%= @prank.name %></h2>
     <div class="floating ml-0" style="height: 150px; width: 150px;">
     <%= @prank.photo.attached? ? cl_image_tag(@prank.photo.key) : "no photo" %>
