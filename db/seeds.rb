@@ -29,10 +29,6 @@ tp_img = URI.open("https://res.cloudinary.com/dzwpbkn3u/image/upload/v1622102243
 tp = Prank.create!(name: "TP something", content: "I will cover the requested object with toilet paper", price: 5000, city:'Ichikawa', user: User.all.sample)
 tp.photo.attach(io: tp_img, filename: 'tp.png', content_type: 'imag/png')
 
-bread_img = URI.open("https://res.cloudinary.com/dzwpbkn3u/image/upload/v1622102429/f86213f933c56262c483dabc6f98469c_sw4ncy_1_bsmfib.png")
-bread = Prank.create!(name: "Throw away cheesebread", content: "I will steal the target's cheese bread and throw it in the trash", city:'Meguro', price: 100, user: User.all.sample)
-bread.photo.attach(io: bread_img, filename: 'bread.png', content_type: 'imag/png')
-
 kenn_img = URI.open("https://res.cloudinary.com/dzwpbkn3u/image/upload/v1622183627/kenn_awjfjk.png")
 kenn = Prank.create!(name: "Laugh for five minutes", content: "I will laugh for five minutes in front of an audience", price: 500, city:'Meguro', user: User.all.sample)
 kenn.photo.attach(io: kenn_img, filename: 'kenn.png', content_type: 'imag/png')
