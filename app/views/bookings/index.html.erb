@@ -4,7 +4,7 @@
     <% if @bookings.empty? %>
       <p>There are no bookings yet</p>
     <% else %>
-      <div class="container">
+  </br></br>
         <h3>Pranks booked</h3>
         <% @bookings.each do |booking| %>
           <div class="card-product" style="width: 500px">
@@ -39,7 +39,7 @@
         <% end %>
       <% end %>
     </div>
-    <div class="container-">
+    <div class="container-booking d-flex flex-column align-items-center pt-5">
       <% if @bookings_as_owner.present? %>
         <h3>Pranks to pull</h3>
         <% @bookings_as_owner.each do |booking| %>
@@ -82,8 +82,8 @@
             <p>There are no bookings</p>
           <% end %>
         <% end %>
-      </div>
     <% end %>
+    <%= link_to 'All pranks', pranks_path, class: 'btn btn-flat mb-3 mt-3 w-10' %>
+    </div>
   </div>
-  <%= link_to 'All pranks', pranks_path, class: 'btn btn-flat mb-3 mt-3 w-10' %>
 </div>
