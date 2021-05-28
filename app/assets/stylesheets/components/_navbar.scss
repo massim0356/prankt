@@ -2,6 +2,7 @@
   justify-content: space-between;
   background: white;
   box-shadow: 0 0 24px rgba(0,0,0,0.1);
+  height: 70px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -12,11 +13,10 @@
   width: 120px;
 }
 
-.btn {
-  background-color: #FB9723;
-  font-color: white;
-}
-
 .make-fixed {
   position: absolute;
+}
+
+.navbar-nav #font-orange {
+  color: #FB9723
 }

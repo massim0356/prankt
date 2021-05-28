@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_24_081058) do
+ActiveRecord::Schema.define(version: 2021_05_27_021012) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,8 +38,9 @@ ActiveRecord::Schema.define(version: 2021_05_24_081058) do
 
   create_table "bookings", force: :cascade do |t|
     t.date "date"
-    t.string "status", default: "incomplete"
+    t.string "status"
     t.text "description"
+    t.time "time"
     t.bigint "user_id", null: false
     t.bigint "prank_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -55,6 +56,8 @@ ActiveRecord::Schema.define(version: 2021_05_24_081058) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "city"
+    t.string "img_url"
     t.index ["user_id"], name: "index_pranks_on_user_id"
   end
 

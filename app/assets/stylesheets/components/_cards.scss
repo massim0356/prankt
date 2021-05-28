@@ -1,6 +1,14 @@
 .container-cards {
-  width: 1068px;
+  width: 700px;
   margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.background-container {
+  width: 100%;
+  background-attachment: fixed;
 }
 
 .btn {
@@ -19,16 +27,18 @@
 }
 
 .card-prank {
+  width: 50%;
   display: flex;
   flex-wrap: wrap;
   padding: 5px;
-
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
   flex-grow: 1;
-  justify-content: space-around;
+  align-items: center;
+  justify-content: center;
 }
+
 
 .prank-name {
   font-size: 18px;
@@ -44,6 +54,10 @@
   line-height: 5px;
 }
 
+.prank-name a:hover {
+  text-decoration: none;
+}
+
 h1 {
   font-size: 60px;
   font-weight: bold;
@@ -57,37 +71,34 @@ h3 {
 }
 
 .card-test {
-  border-radius: 15px;
-  height: 208px;
-  display: flex;
-  overflow: hidden;
   background-color: white;
-  width: 340px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  flex-grow: 1;
-  justify-content: space-around;
-  padding: 16px;
-
-  background-size: cover;
+  height: 150px;
+  width: 250px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-around;
 }
 
 .card-test img {
-  padding-left: 2px;
-  width: 85px;
-  padding-bottom: 73px;
-  margin-top: 26px;
+  padding-left: 15px;
+  height: 100px;
+}
+
+.card-test:hover {
+  transition: 0.3s ease-in-out;
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
 }
 
 .card-product {
   overflow: hidden;
-  height: 120px;
+  min-height: 120px;
   background: white;
   border-radius: 15px;
   display: flex;
   align-items: center;
+  justify-content: center;
   margin-top: 20px;
 }
 
@@ -115,6 +126,7 @@ h3 {
 
 .card-product .card-product-infos {
   padding: 16px;
+  width: 200px;
 }
 
 .card-booking h1 {
@@ -140,4 +152,24 @@ h3 {
   display: inline-block;
   margin: 4px 2px;
   border-radius: 16px;
+}
+
+@media (max-width: 992px) {
+  .content-container {
+    width: 700px;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media (max-width: 768px) {
+  .content-container {
+    width: 600px;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media (max-width: 576px) {
+  .content-container {
+    width: 300px;
+  }
 }
