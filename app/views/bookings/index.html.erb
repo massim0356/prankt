@@ -1,90 +1,84 @@
 <div class="container-booking d-flex flex-column align-items-center pt-5">
-  <div class="card-booking d-flex flex-column align-items-center justify-content-center">
+  <div class="card-booking">
     <h1>Your Bookings</h1>
-    <% if @bookings.empty? %>
-      <p>There are no bookings yet</p>
-    <% else %>
-      <div class="container">
-        <h3>Pranks booked</h3>
-        <% @bookings.each do |booking| %>
-          <div class="card-product border border-dark" style="width: 500px">
-            <%= booking.prank.photo.attached? ? cl_image_tag(booking.prank.photo.key) : cl_image_tag("https://res.cloudinary.com/dzwpbkn3u/image/upload/v1621747327/homeless-chic_n3ntvs.png") %>
-            <div class="card-product-infos">
-              <div class="w-100">
-                <p><b><%= booking.prank.name %></b></p>
-                <p><%= booking.date.strftime('%A, %b %d') %></p>
-                <p><%= booking.description %></p>
-                <p><%= booking.status.capitalize %></p>
-              </div>
-              <% if booking.completed? %>
-                <div id="accordion">
-                  <div class="card border-0">
-                    <div id="headingOne">
-                      <div class="mb-0">
-                        <button class="btn btn-flat btn-block mt-1 text-decoration-none border-0" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                          See Result
-                        </button>
-                      </div>
-                    </div>
-                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                      <div class="card-body">
-                        <%= booking.photo.attached? ? cl_image_tag(booking.photo.key, class: "w-100"): "https://res.cloudinary.com/dzwpbkn3u/image/upload/v1621745766/yann-eating_qjb5z4.png" %>
-                      </div>
+    <div class="container">
+      <h3>Bookings by you</h3>
+      <% @bookings.each_with_index do |booking, index| %>
+        <div class="card-product border border-dark" style="width: 600px">
+          <%= booking.prank.photo.attached? ? cl_image_tag(booking.prank.photo.key) : cl_image_tag("https://res.cloudinary.com/dzwpbkn3u/image/upload/v1621747327/homeless-chic_n3ntvs.png") %>
+          <div class="card-product-infos">
+            <div class="w-100 d-flex justify-content-between">
+              <p><b><%= booking.prank.name %></b></p>
+              <p><%= booking.date.strftime('%A, %b %d') %></p>
+            </div>
+            <div class="w-100 d-flex justify-content-between">
+              <p><%= booking.description %></p>
+              <p><%= booking.status.capitalize %></p>
+            </div>
+            <% if booking.completed? %>
+              <div id="accordion">
+                <div class="card border-0">
+                  <div id="headingOne">
+                    <div class="result-button">
+                      <button class="btn btn-flat btn-block mt-1 text-decoration-none border-0" data-toggle="collapse" data-target="#collapse<%=index%>" aria-expanded="true" aria-controls="collapse<%=index%>">
+                        See Result
+                      </button>
                     </div>
                   </div>
-                <% end %>
+                  <div id="collapse<%=index%>" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div class="card-body">
+                      <%= booking.photo.attached? ? cl_image_tag(booking.photo.key, class: "w-100"): "No photo :(" %>
+                    </div>
+                  </div>
+                </div>
               </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="container">
+      <h3>Your pranks to pull</h3>
+      <% @bookings_as_owner.each do |booking| %>
+        <div class="card-product border border-dark" style="width: 600px">
+          <%= booking.photo.attached? ? cl_image_tag(booking.prank.photo.key) : cl_image_tag("https://res.cloudinary.com/dzwpbkn3u/image/upload/v1621747327/homeless-chic_n3ntvs.png") %>
+          <div class="card-product-infos">
+            <div class="w-100 d-flex justify-content-between">
+              <p><b><%= booking.prank.name %></b></p>
+              <p><%= booking.date.strftime('%A, %b %d') %></p>
+            </div>
+            <div class="w-100 d-flex justify-content-between">
+              <p><%= booking.description %></p>
+              <p><%= booking.status.capitalize %></p>
+            </div>
+            <div class="card-product-actions">
+              <% if booking.pending? %>
+                <%= simple_form_for booking do |f| %>
+                  <%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
+                  <%= f.submit 'Accept', class: 'btn btn-info' %>
+                <% end %>
+                <%= simple_form_for booking do |f| %>
+                  <%= f.input :status, as: :hidden, input_html: { value: 'rejected'} %>
+                  <%= f.submit 'Reject', class: 'btn btn-info' %>
+                <% end %>
+              <% elsif booking.accepted? %>
+                <%= simple_form_for booking do |f| %>
+                  <%= f.input :status, as: :hidden, input_html: { value: 'completed'} %>
+                  <%= f.submit 'Complete', class: 'btn btn-info' %>
+                <% end %>
+              <% elsif booking.completed? %>
+                <%= simple_form_for(booking) do |f| %>
+                  <%= f.input :photo, as: :file, label: false, input_html: {class: "mt-2"} %>
+                  <%= f.submit 'Add Result Photo', class: 'btn btn-info' %>
+                <% end %>
+              <% else %>
+                <p class="booking-status"><%= booking.status %></p>
+              <% end %>
             </div>
           </div>
-        <% end %>
+        </div>
       <% end %>
-      <br>
     </div>
-    <div class="container-">
-      <% if @bookings_as_owner.present? %>
-        <h3>Pranks to pull</h3>
-        <% @bookings_as_owner.each do |booking| %>
-          <% if current_user == booking.prank.user %>
-            <div class="card-product border border-dark" style="width: 500px">
-              <%= image_tag "https://res.cloudinary.com/dzwpbkn3u/image/upload/v1621747327/homeless-chic_n3ntvs.png" %>
-              <div class="card-product-infos">
-                <div>
-                  <p><b><%= booking.prank.name %></b></p>
-                  <p><%= booking.date.strftime('%A, %b %d') %></p>
-                  <p><%= booking.description %></p>
-                </div>
-                <div class="card-product-actions">
-                  <% if booking.pending? %>
-                    <%= simple_form_for booking do |f| %>
-                      <%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
-                      <%= f.submit 'Accept', class: 'btn btn-info' %>
-                    <% end %>
-                    <%= simple_form_for booking do |f| %>
-                      <%= f.input :status, as: :hidden, input_html: { value: 'rejected'} %>
-                      <%= f.submit 'Reject', class: 'btn btn-info' %>
-                    <% end %>
-                  <% elsif booking.accepted? %>
-                    <%= simple_form_for booking do |f| %>
-                      <%= f.input :status, as: :hidden, input_html: { value: 'completed'} %>
-                      <%= f.submit 'Complete', class: 'btn btn-info' %>
-                    <% end %>
-                  <% elsif booking.completed? %>
-                    <%= simple_form_for(booking) do |f| %>
-                      <%= f.input :photo, as: :file %>
-                      <%= f.submit 'Accept', class: 'btn btn-info' %>
-                    <% end %>
-                  <% else %>
-                    <p class="booking-status"><%= booking.status %></p>
-                  <% end %>
-                </div>
-              </div>
-            </div>
-          <% else %>
-            <p>There are no bookings</p>
-          <% end %>
-        <% end %>
-      </div>
-    <% end %>
   </div>
   <%= link_to 'All pranks', pranks_path, class: 'btn btn-flat mb-3 mt-3 w-10' %>
 </div>

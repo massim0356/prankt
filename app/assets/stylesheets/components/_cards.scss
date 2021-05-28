@@ -103,10 +103,10 @@ h3 {
   min-height: 120px;
   background: white;
   border-radius: 15px;
-  display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   margin-top: 20px;
+  display: flex;
 }
 
 .card-product img {
@@ -133,7 +133,6 @@ h3 {
 
 .card-product .card-product-infos {
   padding: 16px;
-  width: 200px;
 }
 
 .card-booking h1 {
@@ -146,8 +145,6 @@ h3 {
 }
 
 .card-product-infos {
-  display: flex;
-  justify-content: space-between;
   width: 100%;
 }
 
