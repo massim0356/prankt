@@ -6,7 +6,7 @@
       <% @bookings.each_with_index do |booking, index| %>
         <div class="card-product border border-dark" style="width: 600px">
           <div class="card-product-infos">
-            <%= booking.photo.attached? ? cl_image_tag(booking.photo.key, class: "w-100"): "https://res.cloudinary.com/dzwpbkn3u/image/upload/v1621745766/yann-eating_qjb5z4.png" %>
+            <%= booking.prank.photo.attached? ? cl_image_tag(booking.prank.photo.key) : cl_image_tag("https://res.cloudinary.com/dzwpbkn3u/image/upload/v1621747327/homeless-chic_n3ntvs.png") %>
             <div class="w-100">
               <p><b><%= booking.prank.name %></b></p>
               <p><%= booking.date.strftime('%A, %b %d') %></p>
