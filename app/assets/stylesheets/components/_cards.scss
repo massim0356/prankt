@@ -70,6 +70,7 @@ h3 {
 }
 
 .card-test {
+  border: none;
   border-radius: 15px;
   height: 208px;
   display: flex;
@@ -80,8 +81,6 @@ h3 {
   grid-template-columns: 1fr 1fr 1fr;
   flex-grow: 1;
   padding-left: 20px;
-  justify-content: space-around;
-  background-size: cover;
   align-items: center;
   justify-content: space-around;
   box-shadow: 0 0px 8px rgba(0,0,0,0.3);

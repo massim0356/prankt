@@ -3,12 +3,13 @@
     <div class="container">
       <h1>Prankt brings <strong>creative pranks</strong> to <strong>creative people</strong>!</h1>
     </br>
-    <p>Pranks created by us, pranks created by you.</p>
+    <p>Search for pranks below, and modify your own!</p>
     <div class="search">
       <%= form_tag pranks_path, method: :get do %>
         <%= text_field_tag :query,
           params[:query],
           class: "form-control",
+          id: "search-form",
           placeholder: "What prank do you want to pull?"
         %>
         <%= submit_tag "Search", class: "btn btn-primary btn-lg" %>
@@ -24,7 +25,7 @@
     <div class="container-cards pt-5">
       <div class="card-prank">
         <% @pranks.each do |prank| %>
-          <div class="card-test border border-dark">
+          <div class="card-test">
             <img src="https://res.cloudinary.com/dzwpbkn3u/image/upload/v1621747327/homeless-chic_n3ntvs.png" alt="pic">
             <div class="prank-name"><%= link_to prank.name, prank_path(prank) %></div>
           </div>
