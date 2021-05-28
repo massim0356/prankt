@@ -33,6 +33,6 @@ class PranksController < ApplicationController
   end
 
   def prank_params
-    params.require(:prank).permit(:name, :content, :price)
+    params.require(:prank).permit(:name, :content, :price, :city, :photo)
   end
 end

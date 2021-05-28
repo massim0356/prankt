@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  height: 70px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -11,12 +12,6 @@
   width: 120px;
 }
 
-// .btn {
-//   background-color: #FB9723;
-//   font-color: white;
-// }
-
-
 .make-fixed {
   position: absolute;
 }
@@ -25,16 +20,3 @@
   color: #FB9723
 }
 
-
-// #list-button {
-//   border-style: solid;
-//   border-color: #FB9723;
-//   a {
-//       color: #FB9723;
-//       text-decoration: none;
-//   }
-// }
-
-// #list-button:hover {
-//   background-color: #f39e3b;
-// }
