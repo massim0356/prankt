@@ -41,7 +41,7 @@
       <h3>Your pranks to pull</h3>
       <% @bookings_as_owner.each do |booking| %>
         <div class="card-product border border-dark" style="width: 600px">
-          <%= booking.photo.attached? ? cl_image_tag(booking.prank.photo.key) : cl_image_tag("https://res.cloudinary.com/dzwpbkn3u/image/upload/v1621747327/homeless-chic_n3ntvs.png") %>
+          <%= booking.prank.photo.attached? ? cl_image_tag(booking.prank.photo.key) : cl_image_tag("https://res.cloudinary.com/dzwpbkn3u/image/upload/v1621747327/homeless-chic_n3ntvs.png") %>
           <div class="card-product-infos">
             <div class="w-100 d-flex justify-content-between">
               <p><b><%= booking.prank.name %></b></p>
