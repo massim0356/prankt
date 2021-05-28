@@ -72,8 +72,8 @@ h3 {
 
 .card-test {
   background-color: white;
-  height: 150px;
-  width: 250px;
+  height: 180px;
+  width: 300px;
   border-radius: 15px;
   display: flex;
   overflow: hidden;
@@ -84,7 +84,9 @@ h3 {
   flex-grow: 1;
   padding-left: 20px;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
+  box-shadow: 0 0px 16px rgba(0,0,0,0.3);
 }
 
 .card-test img {

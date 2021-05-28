@@ -1,10 +1,5 @@
-.search {
-  width: 70%;
-  display: flex;
-}
-
 #search-form {
-  margin-top: 6rem;
+  margin-top: 3rem;
   border-radius: 8px;
   display: inline;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
@@ -14,13 +9,13 @@
 }
 
 #search-form:hover {
-  transform: scale(1.06);
+  transform: scale(1.1);
 }
 
 .btn {
-  margin-left: 2px;
   border-radius: 10px;
   border: none;
+  margin-bottom: 1rem;
 }
 
 .btn:hover {
@@ -29,5 +24,7 @@
 
 .title {
   padding-top: 20px;
-  height: 30%;
+  padding-bottom: 10px;
+  height: 20%;
+  box-shadow: 0 0 24px rgba(0,0,0,0.1);
 }
