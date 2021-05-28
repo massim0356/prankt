@@ -9,7 +9,7 @@ puts "Creating Users, and Pranks..."
 User.create!([email: "test@test.com", password: "123456", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name])
 10.times { User.create!([email: Faker::Internet.email, password: "te23th", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name]) }
 
-sticky_img = URI.open("https://res.cloudinary.com/dzwpbkn3u/image/upload/v1622102263/image_lul1v6.png")
+sticky_img = URI.open("https://res.cloudinary.com/dzwpbkn3u/image/upload/v1622181903/sticky_pt4j7s.png")
 sticky = Prank.create!(name: "Cover something in sticky notes", content: "I will cover the requested item in sticky notes. Disclaimer: I won't do anything illegal (break into someones house etc.)", price: 5000, city:'Ichikawa', user: User.all.sample)
 sticky.photo.attach(io: sticky_img, filename: 'prank.png', content_type: 'image/png')
 
@@ -21,7 +21,7 @@ zoo_img = URI.open("https://res.cloudinary.com/dzwpbkn3u/image/upload/v162210225
 zoo = Prank.create!(name: "Turn backyard into petting zoo", content: "I will turn the targets backyard into a petting zoo. Note: Someone should distract them while I setup the petting zoo.", price: 20000, city:'Tokyo', user: User.all.sample)
 zoo.photo.attach(io: zoo_img, filename: 'zoo.png', content_type: 'imag/png')
 
-jose_img = URI.open("https://res.cloudinary.com/dzwpbkn3u/image/upload/v1622102266/New_Project_ezqptr.png")
+jose_img = URI.open("https://res.cloudinary.com/dzwpbkn3u/image/upload/v1622181903/jose_omodvi.png")
 jose = Prank.create!(name: "Act like Jose in front of other people", content: "I will eat a ton of dust", price: 500, city:'Meguro', user: User.all.sample)
 jose.photo.attach(io: jose_img, filename: 'jose.png', content_type: 'imag/png')
 
@@ -33,11 +33,11 @@ bread_img = URI.open("https://res.cloudinary.com/dzwpbkn3u/image/upload/v1622102
 bread = Prank.create!(name: "Throw away cheesebread", content: "I will steal the target's cheese bread and throw it in the trash", city:'Meguro', price: 100, user: User.all.sample)
 bread.photo.attach(io: bread_img, filename: 'bread.png', content_type: 'imag/png')
 
-kenn_img = URI.open("https://res.cloudinary.com/dzwpbkn3u/image/upload/v1622101011/New_Project_2_nhm7ti.png")
+kenn_img = URI.open("https://res.cloudinary.com/dzwpbkn3u/image/upload/v1622183627/kenn_awjfjk.png")
 kenn = Prank.create!(name: "Laugh for five minutes", content: "I will laugh for five minutes in front of an audience", price: 500, city:'Meguro', user: User.all.sample)
 kenn.photo.attach(io: kenn_img, filename: 'kenn.png', content_type: 'imag/png')
 
-scare_img = URI.open("https://res.cloudinary.com/dzwpbkn3u/image/upload/v1622103790/New_Project_1_zsbxpv.png")
+scare_img = URI.open("https://res.cloudinary.com/dzwpbkn3u/image/upload/v1622181903/ryan_v7clrn.png")
 scare = Prank.create!(name: "Scare someone", content: "I will scare the target by jumping at them while I'm hiding somewhere", price: 1500, city:'Shinjuku', user: User.all.sample)
 scare.photo.attach(io: scare_img, filename: 'scare.png', content_type: 'imag/png')
 
